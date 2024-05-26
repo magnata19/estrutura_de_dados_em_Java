@@ -23,12 +23,36 @@ public class Pilha {
         return null;
     }
 
-    public No top() {
+    public No top () {
         return refNoEntradaPilha;
     }
 
     public boolean isEmpty() {
         return refNoEntradaPilha == null ? true : false;
+    }
+
+
+    @Override
+    public String toString() {
+        String stringAuxiliar = "-----------\n";
+        stringAuxiliar += "Pilha \n";
+        stringAuxiliar += "-----------\n";
+
+        No noAuxiliar = refNoEntradaPilha;
+
+        while(true) {
+            if(noAuxiliar != null) {
+                stringAuxiliar += "[No{Dado=" + noAuxiliar.getDado() + "}]\n";
+                noAuxiliar = noAuxiliar.getRefNo();
+            } else {
+                break;
+            }
+        }
+        stringAuxiliar += "-----------\n";
+        stringAuxiliar += "Fim da pilha\n";
+        stringAuxiliar += "-----------\n";
+
+        return stringAuxiliar;
     }
 
 }
